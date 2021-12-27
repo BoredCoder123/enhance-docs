@@ -1,0 +1,82 @@
+@startuml
+class Brand{
+    - id: integer
+
+    + name(string)
+    + email(string)
+    + password(string)
+    + balance(float/decimal)
+}
+
+class User{
+    -id: integer
+
+    + name(string)
+    + email(string)
+    + password(string)
+    + coins_balance(integer)
+    + age(integer)
+    + gender(string)
+    + share_gender(boolean)
+    + interest(string)
+    + share_interest(boolean)
+    + features(string)
+    + share_features(string)
+    + brandPreferrence(string)
+}
+
+class Campaign{
+    -id: integer
+
+    + name(string)
+    + type(enum)
+    + value(integer)
+    + brand_id(integer)
+    + estimated_views(integer)
+    + estimated_clicks(integer)
+    + current_views(integer)
+    + current_clicks(integer)
+    + coin_balance_remaining(integer)
+    + video_id(integer)
+    + blog_id(integer)
+    + deal_id(integer)
+}
+
+class Video{
+    - id: integer
+
+    + video_url(string)
+}
+
+class Blog{
+    -id: integer
+
+    + blog_body(string)
+}
+
+class Deal{
+    - id: integer
+
+    + image(string)
+    + original_value(double)
+    + discounted_value(double)
+    + coupon_code(string)
+}
+
+class Campaign_Visited{
+    -id: integer
+
+    + campaign_id(integer)
+    + user_id(integer)
+    + campaign_clicked(boolean)
+    + campaign_visited(boolean)
+}
+
+Brand ---> Campaign : creates
+Campaign <--- Video : is a type of
+Campaign <--- Blog : is a type of
+Campaign <--- Deal : is a type of
+Campaign_Visited <--- Campaign
+User ---> Campaign_Visited
+
+@enduml
