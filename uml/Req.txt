@@ -1,0 +1,12 @@
+Cost to company:
+Cost per click: Rs. 10
+Cost per view: Rs. 5
+Cost per survey: Rs. 5 * number of questions
+
+Coins to user:
+Coins per click: 50
+Coins per view: 25
+Coins per survey: 25 * number of questions
+
+Coins to rupees conversion
+1 rupee = 10 coins
